@@ -5,7 +5,7 @@ import {
   useLocation,
   useParams,
 } from "react-router-dom";
-import { Suspense, useEffect, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import { getMoviesDetails } from "../../apiService/movie";
 import { FaArrowCircleLeft } from "react-icons/fa";
 import Loader from "../../components/Loader/Loader";
@@ -30,7 +30,7 @@ export default function MovieDetailsPage() {
   const [isLoading, setIsLoading] = useState(false);
   const [movie, setMovie] = useState(null);
   const location = useLocation();
-  const backLink = location.state ?? "/movies";
+  const backLinkRef = useRef(location.state ?? "/movies");
 
   useEffect(() => {
     if (!movieId) return;
@@ -52,7 +52,7 @@ export default function MovieDetailsPage() {
     <>
       {isLoading && <Loader />}
       {error && <ErrorMessage message={"Sorry! Something get wrong!"} />}
-      <Link className={css.btn} to={backLink}>
+      <Link className={css.btn} to={backLinkRef.current}>
         <FaArrowCircleLeft className={css.icon} />
         Go back
       </Link>
