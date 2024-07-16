@@ -1,0 +1,36 @@
+.link {
+  color: black;
+}
+
+.isActive {
+  color: rgb(140, 0, 255);
+}
+
+.btn {
+  cursor: pointer;
+  border: 2px solid rgb(85, 80, 88);
+  padding: 10px;
+  text-decoration: none;
+}
+
+.icon {
+  padding-right: 5px;
+}
+
+.img {
+  margin: 20px 0;
+}
+
+.list {
+  display: flex;
+  gap: 8px;
+  list-style: none;
+}
+
+.title {
+  padding-bottom: 20px;
+}
+
+.text {
+  padding-bottom: 20px;
+}

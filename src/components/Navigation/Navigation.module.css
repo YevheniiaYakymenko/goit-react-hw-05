@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  gap: 8px;
+  border: 2px solid rgb(85, 80, 88);
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.link {
+  color: black;
+}
+
+.isActive {
+  color: rgb(140, 0, 255);
+}
